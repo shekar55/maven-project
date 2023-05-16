@@ -6,7 +6,7 @@ pipeline {
     triggers {
     def triggers = []
     if (env.BRANCH_NAME == "master") {
-        triggers << cron('30 19 * * *')
+        triggers << cron('54 16 * * *')
     }
     
     pipelineTriggers(triggers)
