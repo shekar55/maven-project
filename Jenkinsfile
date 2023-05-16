@@ -3,16 +3,14 @@ pipeline {
     tools {
         maven "mvn363"
     }
+    triggers {
     def triggers = []
-if (env.BRANCH_NAME == "master") {
-    triggers << cron('28 16 * * *')
+    if (env.BRANCH_NAME == "master") {
+        triggers << cron('30 19 * * *')
+    }
+    
+    pipelineTriggers(triggers)
 }
-properties (
-    [
-        pipelineTriggers(triggers)
- 
-    ]
-)
     stages {
         stage('Checkout') {
             steps {
