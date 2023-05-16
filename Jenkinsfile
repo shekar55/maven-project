@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    tools {
+        maven "mvn363"
+    }
     stages {
         stage('Checkout') {
             steps {
