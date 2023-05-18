@@ -3,9 +3,7 @@ pipeline {
     tools {
         maven "mvn363"
     }
-    triggers {
-    cron '5 7 * * *'
-  }
+    
     
     pipelineTriggers(triggers)
 }
