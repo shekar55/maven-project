@@ -4,10 +4,8 @@ pipeline {
         maven "mvn363"
     }
     triggers {
-    def triggers = []
-    if (env.BRANCH_NAME == "master") {
-        triggers << cron('54 16 * * *')
-    }
+    cron '5 7 * * *'
+  }
     
     pipelineTriggers(triggers)
 }
